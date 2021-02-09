@@ -1,5 +1,5 @@
 {% set name = "jupyter-videochat" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter-videochat-{{ version }}.tar.gz
-  sha256: e50cdde598e20d7af28eaa78cd10102e625c37ef70c6d7add3d94fc5270cbbdb
+  sha256: c38cbc46e245fb53452226a4f6804f9e06171acd0fd1c60c5d3e751f7f881236
 
 build:
   number: 0
