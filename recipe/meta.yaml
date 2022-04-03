@@ -1,13 +1,12 @@
-{% set name = "jupyter-videochat" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.0" %}
 
 package:
-  name: {{ name }}
+  name: jupyter-videochat
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter-videochat-{{ version }}.tar.gz
-  sha256: c38cbc46e245fb53452226a4f6804f9e06171acd0fd1c60c5d3e751f7f881236
+  url: https://pypi.io/packages/source/j/jupyter-videochat/jupyter-videochat-{{ version }}.tar.gz
+  sha256: 8f555f1cf8a0f314964d54ad445fd2d303a2d9b9d17d8a4bcc870f3107ec94cd
 
 build:
   number: 0
@@ -17,11 +16,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
     - escapism
     - jupyterlab ==3.*
-    - python >=3.6
+    - python >=3.7
 
 test:
   imports:
@@ -35,10 +34,12 @@ test:
     - pip
 
 about:
-  home: https://github.com/yuvipanda/jupyter-videochat
-  summary: Video Chat with peers inside JupyterLab
+  home: https://github.com/jupyterlab-contrib/jupyter-videochat
+  summary: Video Chat with peers inside JupyterLab and RetroLab
   license: BSD-3-Clause
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - jupyter_videochat/labextension/static/third-party-licenses.json
 
 extra:
   recipe-maintainers:
