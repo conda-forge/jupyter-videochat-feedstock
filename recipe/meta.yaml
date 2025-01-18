@@ -5,22 +5,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jupyter-videochat/jupyter-videochat-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/j/jupyter-videochat/jupyter-videochat-{{ version }}.tar.gz
   sha256: 8f555f1cf8a0f314964d54ad445fd2d303a2d9b9d17d8a4bcc870f3107ec94cd
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - escapism
     - jupyterlab ==3.*
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -32,6 +32,7 @@ test:
     - jupyter server extension list
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/jupyterlab-contrib/jupyter-videochat
